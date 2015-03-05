@@ -166,6 +166,8 @@ public class SiteMonitorRecorder extends Recorder {
                 connection = getConnection(site.getUrl());
                 connection.setConnectTimeout(descriptor.getTimeout()
                         * MILLISECS_IN_SECS);
+                connection.setReadTimeout(descriptor.getTimeout()
+                        * MILLISECS_IN_SECS);
                 responseCode = connection.getResponseCode();
 
                 List<Integer> successResponseCodes = descriptor
